@@ -13,6 +13,9 @@ using SimpleJSON;
 public class CharacterControllerAnimator : MonoBehaviourPun, IPunObservable, ISavable {
     private static readonly int Carried = Animator.StringToHash("Carried");
     private static readonly int Quaff = Animator.StringToHash("Quaff");
+
+    public Transform HeadTransform => headTransform;
+
     private Kobold kobold;
     private Vilar.IK.ClassicIK solver;
     private float randomSample => 1f+Mathf.SmoothStep(0.1f, 0.9f, Mathf.PerlinNoise(0f, Time.timeSinceLevelLoad*0.08f))*2f;
