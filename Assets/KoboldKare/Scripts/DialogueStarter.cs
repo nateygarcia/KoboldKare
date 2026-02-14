@@ -84,7 +84,9 @@ public class DialogueStarter : GenericUsable {
             }
         }
 
-        engine.SetSet(set);
+        // Don't reset the state
+        if(engine.CurrentSetId != set)
+            engine.SetSet(set);
 
         engine.Step();
         while(engine.HasLine && !engine.IsDialogueOver) {
