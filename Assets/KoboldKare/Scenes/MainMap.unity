@@ -128349,7 +128349,7 @@ MonoBehaviour:
   text: {fileID: 945405182}
   sansUndertaleVocals: {fileID: 11400000, guid: 419ece68178289c449bd83c95ce65b92,
     type: 2}
-  dialogue: {fileID: 2811297602134710623, guid: ac5eb8156f427af4f80698058a3d064a,
+  dialogue: {fileID: 2811297602134710623, guid: 05d2f7c32c25f6f458e8ab23cc40f6ce,
     type: 3}
 --- !u!114 &831557779
 MonoBehaviour:
@@ -145659,7 +145659,7 @@ MonoBehaviour:
   text: {fileID: 1996461137}
   sansUndertaleVocals: {fileID: 11400000, guid: 1a3d64dcee55e004fbcd5fe8de63b712,
     type: 2}
-  dialogue: {fileID: 2811297602134710623, guid: ac5eb8156f427af4f80698058a3d064a,
+  dialogue: {fileID: 2811297602134710623, guid: b21e28bba671a68459d018d109c708c1,
     type: 3}
 --- !u!114 &928972016
 MonoBehaviour:
@@ -204217,7 +204217,7 @@ MonoBehaviour:
   text: {fileID: 817699368}
   sansUndertaleVocals: {fileID: 11400000, guid: ab8874218310ff5428627abdc51a7def,
     type: 2}
-  dialogue: {fileID: 2811297602134710623, guid: ac5eb8156f427af4f80698058a3d064a,
+  dialogue: {fileID: 2811297602134710623, guid: 5b52efc5c0faba74c89e2170b1cdd704,
     type: 3}
 --- !u!114 &1252549630
 MonoBehaviour:
@@ -276672,7 +276672,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue
       value: 
-      objectReference: {fileID: 2811297602134710623, guid: ac5eb8156f427af4f80698058a3d064a,
+      objectReference: {fileID: 2811297602134710623, guid: 2812abc25b36ed54d81a1e9155f351ca,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4655681e203299f4a9151521406cc2fc, type: 3}
@@ -276701,30 +276701,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultTarget: {fileID: 45596409}
---- !u!114 &1692902336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692902334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e687310e22ae948990b80d21e47ee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpDust: {fileID: 0}
-  walkDust: {fileID: 0}
-  headTransform: {fileID: 0}
-  footstepPack: {fileID: 0}
-  inputShouldFaceEye: 0
-  inputShouldIgnoreLookDirChange: 0
-  body: {fileID: 0}
-  crouchedAnimationSpeedMultiplier: 0.5
-  walkingAnimationSpeedMultiplier: 2.5
-  standingAnimationSpeedMultiplier: 0.13
-  inputActivate: 0
-  inputGrabbing: 0
 --- !u!1001 &1693128386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -359088,7 +359064,7 @@ MonoBehaviour:
   text: {fileID: 569733038}
   sansUndertaleVocals: {fileID: 11400000, guid: ab8874218310ff5428627abdc51a7def,
     type: 2}
-  dialogue: {fileID: 2811297602134710623, guid: ac5eb8156f427af4f80698058a3d064a,
+  dialogue: {fileID: 2811297602134710623, guid: d4639c80cd4398f44a50dd537241441c,
     type: 3}
 --- !u!114 &6171776625954649348
 MonoBehaviour:
@@ -390648,7 +390624,7 @@ MonoBehaviour:
   text: {fileID: 8712960148852547430}
   sansUndertaleVocals: {fileID: 11400000, guid: 419ece68178289c449bd83c95ce65b92,
     type: 2}
-  dialogue: {fileID: 2811297602134710623, guid: ac5eb8156f427af4f80698058a3d064a,
+  dialogue: {fileID: 2811297602134710623, guid: 9012543479ed8094c8beb1fb86824b41,
     type: 3}
 --- !u!65 &8712960149350150859
 BoxCollider:

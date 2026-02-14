@@ -1,0 +1,16 @@
+set star0:
+    node 0:
+    "Whoa! You're like, really naked."
+    "Anyway just uh.. help yourself I guess."
+    "Where are you keeping your money anyway..."
+    goto node:0
+
+set star6:
+    node 0:
+    "Hi! Need any help today?"
+    goto node:0
+
+set star12:
+    node 0:
+    "Do you think I'd look good in a hat?"
+    goto node:0

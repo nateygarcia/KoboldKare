@@ -1,0 +1,5 @@
+set star0:
+    node 0:
+    "Welcome! Looking to buy some seeds? We've got kobold eggs too!"
+    "Need help finding something?"
+    goto node:0

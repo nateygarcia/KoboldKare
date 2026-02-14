@@ -1,0 +1,6 @@
+set star0:
+    node 0:
+    "Welcome to the casino, here for business, or pleasure?"
+    "From your lack of clothes I'll guess a little of both. You can play the panchinko machine to earn some adornments."
+    "Don't be a stranger."
+    goto node:0

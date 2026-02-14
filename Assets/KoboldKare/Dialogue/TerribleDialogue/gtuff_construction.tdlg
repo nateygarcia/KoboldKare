@@ -1,0 +1,22 @@
+set star0:
+    node 0:
+    "Hello! You're from that farm over there right? Looking to upgrade?"
+    "Just select something on the wall and we'll construct it for you."
+    "Uh... you mind putting on some pants?"
+    goto node:0
+
+set star4:
+    node 0:
+    "Need something built?"
+    goto node:0
+
+set star8:
+    node 0:
+    "There's my favorite customer!"
+    goto node:0
+
+set star16:
+    node 0:
+    "Sorry, I'm all out of things to build for you! Thanks for being such a loyal customer."
+    "I'll just stand here in case some other naked kobold wants me to build them fetish machines."
+    goto node:0

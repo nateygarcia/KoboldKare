@@ -9,6 +9,8 @@ using UnityEngine;
 using UnityEngine.Localization;
 
 public class DialogueStarter : GenericUsable {
+    private const string SET_PREFIX = "star";
+
 
     [SerializeField] private Sprite useSprite;
     [SerializeField] private GameObject speechBackgroundBubble;
@@ -47,7 +49,7 @@ public class DialogueStarter : GenericUsable {
         }
         source.enabled = false;
 
-        engine = new DialogueEngine(DialogueGrammar.Dialogue.Parse(dialogue.text), UnityEngine.Random.Range);
+        engine = new DialogueEngine(DialogueGrammar.Dialogue.Parse(dialogue.text), UnityEngine.Random.Range, SET_PREFIX+"0");
     }
 
     public override bool CanUse(Kobold k) {
@@ -69,6 +71,20 @@ public class DialogueStarter : GenericUsable {
         source.enabled = true;
         animator.SetTrigger("Talk");
         talking = true;
+
+        string set = "";
+        int bestValue = -1;
+        foreach(string id in engine.DialogueObject.Sets.Keys)
+        {
+            int requiredStars = int.Parse(id.Substring(SET_PREFIX.Length));
+            if(ObjectiveManager.GetStars() >= requiredStars && requiredStars > bestValue)
+            {
+                bestValue = requiredStars;
+                set = id;
+            }
+        }
+
+        engine.SetSet(set);
 
         engine.Step();
         while(engine.HasLine && !engine.IsDialogueOver) {

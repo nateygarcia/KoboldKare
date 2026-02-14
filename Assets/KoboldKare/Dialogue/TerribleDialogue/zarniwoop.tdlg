@@ -1,0 +1,17 @@
+set star0:
+    node 0:
+    "Hey bud."
+    "Welcome to the underground."
+    "Ignore the smoke, feel free to browse the wares."
+    "There's stuff out front over there and behind me too, so really get up in here, no need to be shy."
+    goto node:0
+
+set star6:
+    node 0:
+    "Hey buddy!"
+    goto node:0
+
+set star16:
+    node 0:
+    "Lookin' good today, need help carrying anything?"
+    goto node:0
