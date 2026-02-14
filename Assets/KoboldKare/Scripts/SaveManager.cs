@@ -240,7 +240,14 @@ public static class SaveManager {
                     new SendOptions { Reliability = true });
                 GameObject obj = PhotonNetwork.PrefabPool.Instantiate(prefabName, Vector3.zero, Quaternion.identity);
                 view = obj.GetComponent<PhotonView>();
-                view.ViewID = viewID;
+                try
+                {
+                    view.ViewID = viewID;
+                }
+                catch(InvalidOperationException e)
+                {
+                    // Ignore!!!
+                }
                 obj.SetActive(true);
             }
 
