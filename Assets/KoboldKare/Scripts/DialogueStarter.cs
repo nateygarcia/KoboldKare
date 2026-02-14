@@ -1,3 +1,6 @@
+using Davicro.TerribleDialogue;
+using Davicro.TerribleDialogue.Model;
+using Sprache;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,11 +9,6 @@ using UnityEngine;
 using UnityEngine.Localization;
 
 public class DialogueStarter : GenericUsable {
-    [Serializable]
-    private class DialogueInfo {
-        public int minimumStarCount;
-        public List<LocalizedString> dialogue;
-    }
 
     [SerializeField] private Sprite useSprite;
     [SerializeField] private GameObject speechBackgroundBubble;
@@ -21,12 +19,13 @@ public class DialogueStarter : GenericUsable {
     [SerializeField]
     private AudioPack sansUndertaleVocals;
 
-    [SerializeField] private List<DialogueInfo> dialogueInfos;
+    [SerializeField] private TextAsset dialogue;
 
     private AudioSource source;
     private WaitForSeconds textDelay;
     private WaitForSeconds lineDelay;
-    
+    private DialogueEngine engine;
+        
     private bool talking = false;
 
     public override Sprite GetSprite(Kobold k) {
@@ -47,6 +46,8 @@ public class DialogueStarter : GenericUsable {
             source.loop = false;
         }
         source.enabled = false;
+
+        engine = new DialogueEngine(DialogueGrammar.Dialogue.Parse(dialogue.text), UnityEngine.Random.Range);
     }
 
     public override bool CanUse(Kobold k) {
@@ -68,16 +69,11 @@ public class DialogueStarter : GenericUsable {
         source.enabled = true;
         animator.SetTrigger("Talk");
         talking = true;
-        List<LocalizedString> dialogue = null;
-        foreach (var dialogueCheck in dialogueInfos) {
-            if (ObjectiveManager.GetStars() >= dialogueCheck.minimumStarCount) {
-                dialogue = dialogueCheck.dialogue;
-            }
-        }
-        dialogue ??= dialogueInfos[0].dialogue;
-        foreach (var line in dialogue) {
+
+        engine.Step();
+        while(engine.HasLine && !engine.IsDialogueOver) {
             float startTime = Time.time;
-            string targetString = line.GetLocalizedString();
+            string targetString = engine.CurrentText;
             float duration = 0.025f*targetString.Length;
             text.text = targetString;
             text.maxVisibleCharacters = 0;
@@ -91,6 +87,8 @@ public class DialogueStarter : GenericUsable {
             sansUndertaleVocals.Play(source);
             yield return lineDelay;
             text.text = "";
+
+            engine.Step();
         }
 
         source.enabled = false;
