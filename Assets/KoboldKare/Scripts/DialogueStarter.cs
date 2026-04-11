@@ -1,12 +1,8 @@
-using Davicro.TerribleDialogue;
-using Davicro.TerribleDialogue.Model;
+using TerribleDialogue;
+using TerribleDialogue.Model;
 using Sprache;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
-using UnityEngine.Localization;
 
 public class DialogueStarter : GenericUsable {
     private const string SET_PREFIX = "star";
@@ -91,7 +87,7 @@ public class DialogueStarter : GenericUsable {
         engine.Step();
         while(engine.HasLine && !engine.IsDialogueOver) {
             float startTime = Time.time;
-            string targetString = engine.CurrentText;
+            string targetString = engine.CurrentLine.Text;
             float duration = 0.025f*targetString.Length;
             text.text = targetString;
             text.maxVisibleCharacters = 0;

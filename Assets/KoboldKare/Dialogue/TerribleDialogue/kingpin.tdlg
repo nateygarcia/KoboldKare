@@ -3,9 +3,9 @@ set star0:
     "Oh ho ho.. welcome..."
     "I've got the secret to immortality here"
     "for a price of course."
-    goto node:0
+    goto node:0 break
 
 set star5:
     node 0:
     "There's nothing else for you here... for now."
-    goto node:0
+    goto node:0 break
